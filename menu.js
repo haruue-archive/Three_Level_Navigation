@@ -10,9 +10,10 @@ $(document).ready(function() {
     }
     //消失函数，清除所有三级菜单
     function disappearThird() {
-        $(".third_menu").removeClass("current");
+        $(".second_menu_item, .third_menu").removeClass("current");
         $(".third_menu").fadeOut("fast");
     }
+
     //消失函数，清除一级菜单选定状态
     function disappearFirstChosen() {
         $(".third_menu").removeClass("current");
@@ -37,14 +38,19 @@ $(document).ready(function() {
         $(this).parent().children(".second_menu").fadeIn("fast");
     });
 
-    ////点击非可展开二级菜单/三级菜单时，菜单消失（方便添加实际功能）
-    //$(".second_menu:not(.expandable), .third_menu:not(.expandable)").click(function() {
-    //    disappear();
-    //});
+    //三级菜单出现
+    $(".second_menu_item").mouseenter(function () {
+        if (!$(this).hasClass("current")) {
+            disappearThird();
+            $(this).addClass("current");
+            $(this).children(".third_menu").css("top", $(this).parent().css("top"));
+            $(this).children(".third_menu").fadeIn("fast");
+        }
+    });
 
     //点击空白处或者点击非可展开二级菜单/三级菜单时，菜单消失（方便添加实际功能）
     $(document).click(function(event) {
-        var menu_area = $(".first_menu_title, .second_menu.expandable");
+        var menu_area = $(".first_menu_title, .second_menu.expandable_menu");
         if (!menu_area.is(event.target) && menu_area.has(event.target).length === 0) {
             disappear();
         }
@@ -85,18 +91,18 @@ $(document).ready(function() {
     });
 
     //二级菜单与图标反色
-    $(".second_menu_term").mouseover(function() {
-        var bgPositionY = $(this).children(".second_menu_icon").css("background-position").split(" ")[1];
-        $(this).children(".second_menu_icon").css("background-position","16px "+bgPositionY);
+    $(".second_menu_item").mouseover(function () {
+        var bgPositionY = $(this).children(".menu_left_icon, .menu_expand_icon").css("background-position").split(" ")[1];
+        $(this).children(".menu_left_icon, .menu_expand_icon").css("background-position", "16px " + bgPositionY);
         $(this).css({
             "cursor": "pointer",
             "background-color": "#dc4935",
             "color": "#ffffff"
         });
     });
-    $(".second_menu_term").mouseleave(function() {
-        var bgPositionY = $(this).children(".second_menu_icon").css("background-position").split(" ")[1];
-        $(this).children(".second_menu_icon").css("background-position","0px "+bgPositionY);
+    $(".second_menu_item").mouseleave(function () {
+        var bgPositionY = $(this).children(".menu_left_icon, .menu_expand_icon").css("background-position").split(" ")[1];
+        $(this).children(".menu_left_icon, .menu_expand_icon").css("background-position", "0px " + bgPositionY);
         $(this).css({
             "cursor": "auto",
             "background-color": "transparent",

@@ -2,6 +2,13 @@ body {
     background-color: #f9f9f9;
 }
 
+hr {
+    margin: 0px auto;
+    height: 0px;
+    border-top: #ededed solid 1px;
+    border-bottom: 0px;
+}
+
 .menu {
     font-family: "Myriad Pro", serif;
     font-size: 13px;
@@ -37,17 +44,44 @@ div.second_menu {
     top: 23px;
     left: 0px;
     float: left;
-    width: 214px;
+    min-width: 214px;
     display: none;
     z-index: -5;
 }
 
-div.second_menu_term {
+div.second_menu_item {
     padding-top: 12px;
     padding-right: 14px;
     padding-left: 14px;
     padding-bottom: 14px;
     height: 10px;
+}
+
+div.third_menu {
+    color: #000000;
+    background-color: #ffffff;
+    position: absolute;
+    top: 0px;
+    left: 210px;
+    min-width: 200px;
+    width: auto;
+    display: none;
+    border: #e7e7e7 solid 1px;
+    z-index: 6;
+}
+
+div.third_menu_item {
+    padding-top: 12px;
+    padding-right: 14px;
+    padding-left: 14px;
+    padding-bottom: 14px;
+    height: 10px;
+    z-index: 7;
+}
+
+div.third_menu_item:hover {
+    color: #ffffff;
+    background-color: #dc4935;
 }
 
 span.menu_shortcuts {
@@ -58,10 +92,19 @@ span.menu_shortcuts {
 
 span.second_menu_icon {
     position: relative;
-    float: left;
     width: 16px;
     height: 16px;
+}
+
+span.menu_left_icon, span.menu_no_icon {
+    float: left;
     margin-right: 12px;
+}
+
+span.menu_expand_icon {
+    float: right;
+    background-image: url("image/icons.png");
+    background-position: 0px -32px;
 }
 
 div#second_menu_file {
@@ -71,4 +114,24 @@ div#second_menu_file {
 span#new_icon {
     background-image: url("image/icons.png");
     background-position: 0px 0px;
+}
+
+span#open_icon {
+    background-image: url("image/icons.png");
+    background-position: 0px -64px;
+}
+
+span#save_icon {
+    background-image: url("image/icons.png");
+    background-position: 0px -16px;
+}
+
+span#export_icon {
+    background-image: url("image/icons.png");
+    background-position: 0px -48px;
+}
+
+span#print_icon {
+    background-image: url("image/icons.png");
+    background-position: 0px -80px;
 }
