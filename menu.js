@@ -1,3 +1,12 @@
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+// * REDROCK-TEAM HOMEWORK 3 (20151025)                          *
+// * Stage 1 -  Three level navigation in HTML                   *
+// * Author:    Haruue Icymoon                                   *
+// * Time:      Tue Oct 27 23:00:58 CST 2015                     *
+// * Website:   http://www.caoyue.com.cn/                        *
+// * File:      index.html, menu.css, menu.js, ./image/icons.png *
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
 $(document).ready(function() {
     //消失函数，清除所有二、三级菜单，以及一级菜单的选定状态
     function disappear() {
