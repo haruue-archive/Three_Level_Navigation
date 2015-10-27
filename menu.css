@@ -1,0 +1,74 @@
+body {
+    background-color: #f9f9f9;
+}
+
+.menu {
+    font-family: "Myriad Pro", serif;
+    font-size: 13px;
+    margin: 0px;
+    padding: 0px;
+}
+
+div#first_menu {
+    position: relative;
+    float: left;
+    left: 91px;
+    top: 20px;
+    z-index: 5;
+}
+
+span.in_first_menu {
+    position: relative;
+    float: left;
+}
+
+span.first_menu_title {
+    min-width: 12px;
+    padding-left: 8px;
+    padding-right: 10px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    text-align: center;
+}
+
+div.second_menu {
+    background-color: #ffffff;
+    position: absolute;
+    top: 23px;
+    left: 0px;
+    float: left;
+    width: 214px;
+    display: none;
+    z-index: -5;
+}
+
+div.second_menu_term {
+    padding-top: 12px;
+    padding-right: 14px;
+    padding-left: 14px;
+    padding-bottom: 14px;
+    height: 10px;
+}
+
+span.menu_shortcuts {
+    position: relative;
+    float: right;
+    color: #aeaeae;
+}
+
+span.second_menu_icon {
+    position: relative;
+    float: left;
+    width: 16px;
+    height: 16px;
+    margin-right: 12px;
+}
+
+div#second_menu_file {
+    border: #e7e7e7 solid 1px;
+}
+
+span#new_icon {
+    background-image: url("image/icons.png");
+    background-position: 0px 0px;
+}
